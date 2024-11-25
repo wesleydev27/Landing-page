@@ -1,0 +1,493 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="GD - Serviços especializados em instalação, manutenção e higienização de ar condicionado com equipe qualificada e atendimento de qualidade.">
+
+    <title>GD instalações e manutenções de ar condicionado</title>
+    <!-- tailwind CDN-->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+
+    <!--FONT AWESOME-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+        integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <!--FAVICON-->
+    <link rel="shortcut icon" href="img/Logo GD.svg" type="image/x-icon">
+
+    <!--ANIMATION JS CDN-->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+
+    <!--CSS UNICO-->
+    <style>
+        /*<!-- ANIMAÇÃO PARA O CARROUSEL DE MARCAS-->*/
+        @keyframes slide {
+            0% {
+                transform: translateX(0);
+            }
+
+            100% {
+                transform: translateX(-100%);
+            }
+        }
+
+        .animate-slide {
+            animation: slide 35s linear infinite;
+        }
+
+        /* PERSONALIZAÇÃO DABARRA DE ROLAGEM */
+        ::-webkit-scrollbar {
+            width: 12px;
+            height: 12px;
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background-color: #888;
+            border-radius: 10px;
+            border: 3px solid #f1f1f1;
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+            background-color: #555;
+        }
+
+        ::-webkit-scrollbar-track {
+            background-color: #f1f1f1;
+            border-radius: 10px;
+        }
+
+        ::-webkit-scrollbar-track:hover {
+            background-color: #e0e0e0;
+        }
+
+        /* PARA FIREFOX*/
+        html {
+            scrollbar-color: #ff8800 #f1f1f1;
+            scrollbar-width: thin;
+        }
+
+        /*FIM PERSONALIZAÇÃO DA BARRA DE ROLAGEM*/
+    </style>
+
+</head>
+
+<body>
+
+    <!-- HEADER -->
+    <section class=" py-2 fixed top-0 left-0 right-0 z-50 bg-white border-b border-gray-100">
+        <div class="flex justify-between items-center lg:justify-around ">
+            <!-- LOGO -->
+            <section>
+                <a href="index.html"><img src="img/Logo GD.svg" alt="GD instalações e manutenções de ar condicionado"
+                        class="w-28 lg:w-32 px-1"></a>
+            </section>
+
+            <!-- DESKTOP MENU -->
+            <section class="hidden lg:block">
+                <ul class="flex text-lg">
+                    <li class="mx-4 hover:text-orange-600"><a href="#instalacao">Instalação</a></li>
+                    <li class="mx-4 hover:text-orange-600"><a href="#manutencao">Manutenção</a></li>
+                    <li class="mx-4 hover:text-orange-600"><a href="#higienizacao">Higienização</a></li>
+                    <li class="mx-4 hover:text-orange-600"><a href="#infraestrutura">Infraestrutura</a></li>
+
+                    <li><a href="tel:19982718505"
+                            class="px-4 py-2 bg-orange-600 text-white rounded-full hover:bg-opacity-90">Ligue (19)
+                            98271-8505</a>
+                    </li>
+                    <!-- BOTÃO WHATSAPP-->
+                    <li><a href="https://wa.me/5519982975926?text=Ol%C3%A1%20eu%20vim%20do%20seu%20site%20de%20ar%20condicionado%20e%20gostaria%20de%20um%20or%C3%A7amento!"
+                            class="px-4 py-2 bg-green-500 text-white rounded-full ml-2 hover:bg-opacity-90"><i
+                                class="fa-brands fa-whatsapp mr-1" aria-hidden="true"></i>Whatsapp</a>
+                    </li>
+                </ul>
+            </section>
+
+            <!-- BOTÃO MENU MOBILE -->
+            <button class="lg:hidden text-gray-500 hover:text-gray-700 px-2" onclick="toggleMenu()">
+                <!-- ICONE SVG-->
+                <svg xmlns="http://www.w3.org/2000/svg" class=" w-8 text-orange-600" fill="none" viewBox="0 0 24 24"
+                    stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+                </svg>
+            </button>
+        </div>
+
+        <!-- MENU MOBILE -->
+        <section id="mobile-menu"
+            class="hidden lg:hidden bg-white text-center absolute left-0 right-0 top-22 z-50 text-lg ">
+            <ul class="pt-4 pb-8">
+                <li class="block py-2 hover:text-orange-600"><a href="#instalacao">Instalação</a></li>
+                <li class="block py-2 hover:text-orange-600"><a href="#manutencao">Manutenção</a></li>
+                <li class="block py-2 hover:text-orange-600"><a href="#higienizacao">Higienização</a></li>
+                <li class="block py-2 hover:text-orange-600"><a href="#infraestrutura">Infraestrutura</a></li>
+                <!-- BOTÃO LIGUE -->
+                <li class="m-2"><a href="tel:19982718505"
+                        class="px-4 py-2 bg-orange-600 text-white rounded-full hover:bg-opacity-90">Ligue (19)
+                        98271-8505</a>
+                </li>
+                <!-- BOTÃO WHATSAPP-->
+                <li class="m-6"><a
+                        href="https://wa.me/5519982975926?text=Ol%C3%A1%20eu%20vim%20do%20seu%20site%20de%20ar%20condicionado%20e%20gostaria%20de%20um%20or%C3%A7amento!"
+                        class="px-4 py-2 bg-green-500 text-white rounded-full  hover:bg-opacity-90 "><i
+                            class="fa-brands fa-whatsapp mr-1" aria-hidden="true"></i>Whatsapp</a>
+                </li>
+            </ul>
+        </section>
+    </section>
+
+    <!-- main -->
+    <main class=" relative">
+        <!--BANNER PRINCIPAL-->
+        <section class="relative">
+            <img src="img/Banners/Background.webp" alt="GD instalações e manutenções de ar condicionado"
+                class="w-full h-[500px] object-cover" loading="eager">
+            <!--OVERLAY-->
+            <div class="absolute inset-0 bg-black bg-opacity-55 h-[500px]"></div>
+            <!--TITULO PRINCIPAL-->
+            <div class="absolute inset-0 flex items-center justify-center ">
+                <div class="text-center text-white xl:w-1/2 ">
+                    <h1 class="text-4xl md:text-5xl font-bold mb-4 px-1" data-aos="fade-out" data-aos-duration="1000"
+                        data-aos-delay="400">Assistência Especializada de Ar Condicionado em
+                        PMOC</h1>
+                    <p class="text-xl md:text-2xl p-3" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="400">
+                        Atendimento Autorizado e Credenciado:
+                        Instalação, Limpeza, Manutenção, Laudo PMOC e Contratos com Profissionais Ágeis e
+                        Qualificados.</p>
+
+                </div>
+            </div>
+
+        </section>
+
+    </main>
+
+    <!--SERVIÇOS-->
+    <section class=" py-12 p-6 bg-gray-50 ">
+        <!--BOTÃO WHATSAPP-->
+        <a href="https://wa.me/5519982975926?text=Ol%C3%A1%20eu%20vim%20do%20seu%20site%20de%20ar%20condicionado%20e%20gostaria%20de%20um%20or%C3%A7amento!"
+            class="md:w-80 px-4 py-3 mx-auto bg-green-500 text-white rounded-full flex justify-center items-center hover:bg-opacity-90 lg:text-1xl"
+            data-aos="fade-in" data-aos-duration="1000" data-aos-delay="400"><i class="fa-brands fa-whatsapp mr-1"
+                aria-hidden="true"></i>Solicite um orçamento</a>
+        <!--TITULO VEJA NOSSOS SERVIÇOS-->
+        <h2 class=" lg:text-5xl  md:text-4xl text-3xl text-center p-4 font-medium text-orange-600 " data-aos="fade-out"
+            data-aos-duration="1000" data-aos-delay="400">
+            O que nós oferecemos
+        </h2>
+        <!--CARDS SERVIÇOS-->
+        <section class=" grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-3
+            " data-aos="fade-up" data-aos-duration="1000" data-aos-delay="400">
+            <!--CARD INSTALAÇÃO-->
+            <div class="bg-white p-4 rounded-lg shadow-md" id="instalacao">
+                <img src="img/Slider/01 Instalação.webp" alt="Instalação de ar condicionado" class="w-full rounded-lg">
+                <h3 class="text-2xl font-semibold mb-2  mt-4">Instalação</h3>
+                <p class="text-gray-600">Instalação de ar condicionado.</p>
+
+                <!--BOTÃO WHATSAPP-->
+                <a href="https://wa.me/5519982975926?text=Ol%C3%A1%20eu%20vim%20do%20seu%20site%20de%20ar%20condicionado%20e%20gostaria%20de%20um%20or%C3%A7amento!"
+                    class="w-full px-2 py-2 mt-4 bg-green-500 text-white rounded-full flex justify-center items-center hover:bg-opacity-90 lg:text-1xl"><i
+                        class="fa-brands fa-whatsapp mr-1" aria-hidden="true"></i>Clique aqui</a>
+            </div>
+            <!--CARD MANUTENÇÃO-->
+            <div class="bg-white p-4 rounded-lg shadow-md" data-aos="fade-up" data-aos-duration="1000"
+                data-aos-delay="400" id="manutencao">
+                <img src="img/Slider/02 Manutenção.webp" alt="Manutenção de ar condicionado" class="w-full rounded-lg">
+                <h3 class="text-2xl font-semibold mb-2  mt-4">Manutenção</h3>
+                <p class="text-gray-600">Manutenção de ar condicionado PMOC é aqui na GD.</p>
+
+                <!--BOTÃO WHATSAPP-->
+                <a href="https://wa.me/5519982975926?text=Ol%C3%A1%20eu%20vim%20do%20seu%20site%20de%20ar%20condicionado%20e%20gostaria%20de%20um%20or%C3%A7amento!"
+                    class="w-full px-2 py-2 mt-4 bg-green-500 text-white rounded-full flex justify-center items-center hover:bg-opacity-90 lg:text-1xl"><i
+                        class="fa-brands fa-whatsapp mr-1" aria-hidden="true"></i>Clique aqui</a>
+            </div>
+
+            <!--CARD HIGIENIZACAO-->
+            <div class="bg-white p-4 rounded-lg shadow-md" data-aos="fade-up" data-aos-duration="1000"
+                data-aos-delay="400" id="higienizacao">
+                <img src="img/Slider/04 Higienização.webp" alt="Higienização de ar condicionado"
+                    class="w-full rounded-lg">
+                <h3 class="text-2xl font-semibold mb-2  mt-4">Higienização</h3>
+                <p class="text-gray-600">A higienização de ar condicionado é fundamental.</p>
+
+                <!--BOTÃO WHATSAPP-->
+                <a href="https://wa.me/5519982975926?text=Ol%C3%A1%20eu%20vim%20do%20seu%20site%20de%20ar%20condicionado%20e%20gostaria%20de%20um%20or%C3%A7amento!"
+                    class="w-full px-2 py-2 mt-4 bg-green-500 text-white rounded-full flex justify-center items-center hover:bg-opacity-90 lg:text-1xl"><i
+                        class="fa-brands fa-whatsapp mr-1" aria-hidden="true"></i>Clique aqui</a>
+            </div>
+
+            <!--CARD INFRAESTRUTURA-->
+            <div class="bg-white p-4 rounded-lg shadow-md" data-aos="fade-up" data-aos-duration="1000"
+                data-aos-delay="400" id="infraestrutura">
+                <img src="img/Slider/06 Infraestrutura.webp" alt="Infraestrutura de ar condicionado"
+                    class="w-full rounded-lg">
+                <h3 class="text-2xl font-semibold mb-2  mt-4">Infraestrutura</h3>
+                <p class="text-gray-600">A infraestrutura de ar condicionado é essencial.</p>
+
+                <!--BOTÃO WHATSAPP-->
+                <a href="https://wa.me/5519982975926?text=Ol%C3%A1%20eu%20vim%20do%20seu%20site%20de%20ar%20condicionado%20e%20gostaria%20de%20um%20or%C3%A7amento!"
+                    class="w-full px-2 py-2 mt-4 bg-green-500 text-white rounded-full flex justify-center items-center hover:bg-opacity-90 lg:text-1xl"><i
+                        class="fa-brands fa-whatsapp mr-1" aria-hidden="true"></i>Clique aqui</a>
+            </div>
+
+        </section>
+    </section>
+
+    <!-- CAROUSEL DE TRABALHOS -->
+    <!--TITULO VEJA NOSSOS TRABALHOS-->
+    <h1 class=" lg:text-5xl  md:text-4xl text-3xl text-center py-8 font-medium text-orange-600 " data-aos="fade-bottom"
+        data-aos-duration="1000" data-aos-delay="600">Trabalhos já realizados</h1>
+
+    <section class="relative flex items-center justify-center w-full overflow-hidden p-6 h-auto" data-aos="fade-up"
+        data-aos-duration="1000" data-aos-delay="600">
+        <!-- CONTAINER  CAROUSEL-->
+        <section class="flex transition-transform ease-in-out duration-500" id="carousel-content">
+            <!-- Slide 1 -->
+            <div class="flex-none w-full sm:w-1/3 px-2">
+                <img src="img/Slider/1.jpg" alt="Slide 1" class="w-full h-auto rounded-lg shadow-lg">
+            </div>
+            <!-- Slide 2 -->
+            <div class="flex-none w-full sm:w-1/3 px-2">
+                <img src="img/Slider/2.jpg" alt="Slide 2" class="w-full h-auto rounded-lg shadow-lg">
+            </div>
+            <!-- Slide 3 -->
+            <div class="flex-none w-full sm:w-1/3 px-2">
+                <img src="img/Slider/3.jpg" alt="Slide 3" class="w-full h-auto rounded-lg shadow-lg">
+            </div>
+            <!-- Slide 4 -->
+            <div class="flex-none w-full sm:w-1/3 px-2">
+                <img src="img/Slider/4.jpg" alt="Slide 4" class="w-full h-auto rounded-lg shadow-lg">
+            </div>
+            <!-- Slide 5 -->
+            <div class="flex-none w-full sm:w-1/3 px-2">
+                <img src="img/Slider/5.jpg" alt="Slide 5" class="w-full h-auto rounded-lg shadow-lg">
+            </div>
+            <!-- Slide 6 -->
+            <div class="flex-none w-full sm:w-1/3 px-2">
+                <img src="img/Slider/6.jpg" alt="Slide 5" class="w-full h-auto rounded-lg shadow-lg">
+            </div>
+            <!-- Slide 7 -->
+            <div class="flex-none w-full sm:w-1/3 px-2">
+                <img src="img/Slider/7.jpg" alt="Slide 5" class="w-full h-auto rounded-lg shadow-lg">
+            </div>
+            <!-- Slide 8 -->
+            <div class="flex-none w-full sm:w-1/3 px-2">
+                <img src="img/Slider/8.jpg" alt="Slide 5" class="w-full h-auto rounded-lg shadow-lg">
+            </div>
+
+            <!-- Slide 1 -->
+            <div class="flex-none w-full sm:w-1/3 px-2">
+                <img src="img/Slider/1.jpg" alt="Slide 1" class="w-full h-auto rounded-lg shadow-lg">
+            </div>
+            <!-- Slide 2 -->
+            <div class="flex-none w-full sm:w-1/3 px-2">
+                <img src="img/Slider/2.jpg" alt="Slide 2" class="w-full h-auto rounded-lg shadow-lg">
+            </div>
+            <!-- Slide 3 -->
+            <div class="flex-none w-full sm:w-1/3 px-2">
+                <img src="img/Slider/3.jpg" alt="Slide 3" class="w-full h-auto rounded-lg shadow-lg">
+            </div>
+            <!-- Slide 4 -->
+            <div class="flex-none w-full sm:w-1/3 px-2">
+                <img src="img/Slider/4.jpg" alt="Slide 4" class="w-full h-auto rounded-lg shadow-lg">
+            </div>
+            <!-- Slide 5 -->
+            <div class="flex-none w-full sm:w-1/3 px-2">
+                <img src="img/Slider/5.jpg" alt="Slide 5" class="w-full h-auto rounded-lg shadow-lg">
+            </div>
+            <!-- Slide 6 -->
+            <div class="flex-none w-full sm:w-1/3 px-2">
+                <img src="img/Slider/6.jpg" alt="Slide 5" class="w-full h-auto rounded-lg shadow-lg">
+            </div>
+            <!-- Slide 7 -->
+            <div class="flex-none w-full sm:w-1/3 px-2">
+                <img src="img/Slider/7.jpg" alt="Slide 5" class="w-full h-auto rounded-lg shadow-lg">
+            </div>
+            <!-- Slide 8 -->
+            <div class="flex-none w-full sm:w-1/3 px-2">
+                <img src="img/Slider/8.jpg" alt="Slide 5" class="w-full h-auto rounded-lg shadow-lg">
+            </div>
+        </section>
+
+        <!-- BOTÃO DE NAVEGAÇÃO VOLTAR-->
+        <button class="absolute left-4 px-4 py-2 text-white bg-orange-500 hover:bg-gray-900 rounded-full"
+            onclick="prevSlide()">
+            <i class="fa-solid fa-chevron-left"></i>
+        </button>
+
+        <!-- BOTÃO DE NAVEGAÇÃO AVANÇAR-->
+        <button class="absolute right-4 px-4 py-2 text-white bg-orange-500 hover:bg-gray-900 rounded-full"
+            onclick="nextSlide()">
+            <i class="fa-solid fa-chevron-right"></i>
+        </button>
+    </section>
+
+
+
+    <!--MARCAS PARCEIRAS-->
+    <section class="bg-white py-10" id="carrosel-marcas">
+        <h2 class="text-3xl font-medium text-center mb-8 text-orange-600" data-aos="fade-up" data-aos-duration="1000"
+            data-aos-delay="400">Nossas marcas parceiras</h2>
+        <div class="flex justify-start items-center overflow-hidden whitespace-nowrap">
+            <div class="flex gap-6 animate-slide">
+                <!-- Logos das marcas -->
+                <img src="img/Marcas/1 logo-brastemp.jpg" alt="logo-brastemp" class="w-30">
+                <img src="img/Marcas/2 logo-carrier.jpg" alt="Carrier" class="w-30">
+                <img src="img/Marcas/3 logo-consul.jpg" alt="Consul" class="w-30">
+                <img src="img/Marcas/4 logo-daikin.jpg" alt="Daikin" class="w-30">
+                <img src="img/Marcas/5 logo-electrolux.jpg" alt="Electrolux" class="w-30">
+                <img src="img/Marcas/6 logo-elgin.jpg" alt="logo-elgin" class="w-30">
+                <img src="img/Marcas/7 logo-fujitsu.jpg" alt="logo-fujitsu" class="w-30">
+                <img src="img/Marcas/8 logo-gree.jpg" alt="logo-gree" class="w-30">
+                <img src="img/Marcas/9 logo-hitachi.jpg" alt="logo-hitachi" class="w-30">
+                <img src="img/Marcas/10 logo-komeco.jpg" alt="logo-komeco" class="w-30">
+                <img src="img/Marcas/11 logo-lg.jpg" alt="logo-lg" class="w-30">
+                <img src="img/Marcas/12 logo-midea.jpg" alt="logo-midea" class="w-30">
+                <img src="img/Marcas/13 logo-mitsubishi.jpg" alt="logo-mitsubishi" class="w-30">
+                <img src="img/Marcas/14 logo-panasonic.jpg" alt="logo-panasonic" class="w-30">
+                <img src="img/Marcas/15 logo-rheem.jpg" alt="logo-rheem" class="w-30">
+                <img src="img/Marcas/16 logo-samsung.jpg" alt="logo-samsung" class="w-30">
+                <img src="img/Marcas/17 logo-springer.jpg" alt="logo-springer" class="w-30">
+                <img src="img/Marcas/18 logo-trane.jpg" alt="logo-trane" class="w-30">
+                <img src="img/Marcas/19 logo-york.jpg" alt="logo-york" class="w-30">
+                <!--CONTINUAÇÃO-->
+                <img src="img/Marcas/1 logo-brastemp.jpg" alt="logo-brastemp" class="w-30">
+                <img src="img/Marcas/2 logo-carrier.jpg" alt="Carrier" class="w-30">
+                <img src="img/Marcas/3 logo-consul.jpg" alt="Consul" class="w-30">
+                <img src="img/Marcas/4 logo-daikin.jpg" alt="Daikin" class="w-30">
+                <img src="img/Marcas/5 logo-electrolux.jpg" alt="Electrolux" class="w-30">
+                <img src="img/Marcas/6 logo-elgin.jpg" alt="logo-elgin" class="w-30">
+                <img src="img/Marcas/7 logo-fujitsu.jpg" alt="logo-fujitsu" class="w-30">
+                <img src="img/Marcas/8 logo-gree.jpg" alt="logo-gree" class="w-30">
+                <img src="img/Marcas/9 logo-hitachi.jpg" alt="logo-hitachi" class="w-30">
+                <img src="img/Marcas/10 logo-komeco.jpg" alt="logo-komeco" class="w-30">
+                <img src="img/Marcas/11 logo-lg.jpg" alt="logo-lg" class="w-30">
+                <img src="img/Marcas/12 logo-midea.jpg" alt="logo-midea" class="w-30">
+                <img src="img/Marcas/13 logo-mitsubishi.jpg" alt="logo-mitsubishi" class="w-30">
+                <img src="img/Marcas/14 logo-panasonic.jpg" alt="logo-panasonic" class="w-30">
+                <img src="img/Marcas/15 logo-rheem.jpg" alt="logo-rheem" class="w-30">
+                <img src="img/Marcas/16 logo-samsung.jpg" alt="logo-samsung" class="w-30">
+                <img src="img/Marcas/17 logo-springer.jpg" alt="logo-springer" class="w-30">
+                <img src="img/Marcas/18 logo-trane.jpg" alt="logo-trane" class="w-30">
+                <img src="img/Marcas/19 logo-york.jpg" alt="logo-york" class="w-30">
+            </div>
+    </section>
+
+    <!--CARDS COMO FUNCIONA-->
+    <section class="como-funciona py-12 bg-gray-100 text-center">
+        <h2 class="text-4xl font-bold text-blue-800 mb-6" data-aos="fade-up">Como funciona?</h2>
+        <h3 class="text-2xl font-semibold text-orange-400 mb-12">Estamos ansiosos para te atender!</h3>
+        <div class="cards-3 grid grid-cols-1 md:grid-cols-3 gap-8 px-6">
+            <div class="card-3 p-6 bg-white shadow-lg rounded-lg transition-transform transform hover:scale-105"
+                data-aos="fade-bottom" aria-label="Encontre o serviço">
+                <i class="fas fa-search text-4xl text-blue-500 mb-4" aria-label="Ícone de pesquisa"></i>
+                <h4 class="text-xl font-semibold text-gray-800 mb-2">Encontre o serviço</h4>
+                <h5 class="text-gray-500">e selecione</h5>
+            </div>
+            <div class="card-3 p-6 bg-white shadow-lg rounded-lg transition-transform transform hover:scale-105"
+                data-aos="fade-up" aria-label="Chame o técnico">
+                <i class="fas fa-user text-4xl text-blue-500 mb-4" aria-label="Ícone de usuário"></i>
+                <h4 class="text-xl font-semibold text-gray-800 mb-2">Chame o técnico</h4>
+                <h5 class="text-gray-500">no WhatsApp ou ligue pelo telefone</h5>
+            </div>
+            <div class="card-3 p-6 bg-white shadow-lg rounded-lg transition-transform transform hover:scale-105"
+                data-aos="fade-up" aria-label="Receba o orçamento">
+                <i class="fas fa-tools text-4xl text-blue-500 mb-4" aria-label="Ícone de ferramentas"></i>
+                <h4 class="text-xl font-semibold text-gray-800 mb-2">E receba seu orçamento</h4>
+                <h5 class="text-gray-500">Em poucos minutos</h5>
+            </div>
+        </div>
+    </section>
+    <!--FIM DOS CARDS COMO FUNCIONA-->
+
+
+    <!--BOTÃO VOLTA PARA O TOPO-->
+    <button id="back-to-top-btn" aria-label="Voltar ao topo"
+        class="fixed bottom-4 right-4 p-3 z-50 bg-orange-500 text-white rounded-lg shadow-lg opacity-0 transition-opacity duration-300 hover:bg-blue-600">
+        <i class="fa-solid fa-chevron-up"></i>
+    </button>
+
+    <script>
+        // SCRIPT VOLTA PARA O TOPO
+        const backToTopBtn = document.getElementById('back-to-top-btn');
+
+        function checkScroll() {
+            const totalHeight = document.documentElement.scrollHeight - window.innerHeight;
+            const scrollPosition = window.pageYOffset || document.documentElement.scrollTop;
+
+            if (scrollPosition > totalHeight / 2) {
+                backToTopBtn.classList.add('opacity-100');
+                backToTopBtn.classList.remove('opacity-0');
+            } else {
+                backToTopBtn.classList.add('opacity-0');
+                backToTopBtn.classList.remove('opacity-100');
+            }
+        }
+
+        function scrollToTop() {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        }
+
+        window.addEventListener('scroll', checkScroll);
+        backToTopBtn.addEventListener('click', scrollToTop);
+    </script>
+    <!--FIM BOTÃO DO VOLTA PARA O TOPO-->
+
+    <!-- FOOTER-->
+    <footer class="bg-white py-8">
+        <div class="container mx-auto flex flex-col md:flex-row items-center justify-between text-center md:text-left">
+            <!-- SLOGAN -->
+            <div class="mb-8 md:mb-0">
+                <div class="flex items-center justify-center md:justify-start mb-2">
+                    <img src="img/Logo GD.svg" alt="Logo GD Ar Condicionado" class="w-22 h-12 mr-2">
+                </div>
+                <p class="text-orange-600 font-semibold">Eficiência e conforto para seu ambiente</p>
+            </div>
+
+            <!-- LINKS ÚTEIS -->
+            <div class="mb-8 md:mb-0">
+                <h3 class="text-xl font-semibold text-orange-600">Links Úteis</h3>
+                <ul class="mt-2 space-y-1">
+                    <li><a href="#" class="text-gray-600 hover:text-gray-800">Política de privacidade</a></li>
+                    <li><a href="#" class="text-gray-600 hover:text-gray-800">Termos de uso</a></li>
+                    <li><a href="#" class="text-gray-600 hover:text-gray-800">Fale conosco</a></li>
+                </ul>
+            </div>
+
+            <!-- CONTATO -->
+            <div>
+                <h3 class="text-xl font-semibold text-orange-600">Contato</h3>
+                <ul class="mt-2 space-y-1">
+                    <li><a href="mailto:gdarcondicionado2024@gmail.com" class="text-gray-600 hover:text-gray-800">
+                            <p class="font-medium">Email:</p>
+                            gdarcondicionado2024@gmail.com
+                        </a></li>
+                    <li><a href="tel:+5519982718505" class="text-gray-600 hover:text-gray-800">
+                            <p class="font-medium">Ligue:</p>
+                            (19)98271-8505
+                        </a></li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- LINE BLUE E COPYRIGHT -->
+        <div class="bg-blue-500 py-4 mt-8 absolute w-full">
+            <div class="container mx-auto text-center">
+                <p class="text-white">&copy; 2024 GD ar condicionado. Todos os direitos reservados.</p>
+            </div>
+        </div>
+    </footer>
+    <!-- FIM DO FOOTER-->
+
+    <!--SCRIPT JS-->
+    <script src="js/script.js"></script>
+</body>
+
+</html>
